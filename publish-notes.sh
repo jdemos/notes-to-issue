@@ -17,8 +17,7 @@ mkdir -p "$TRACKER_DIR"
 while IFS= read -r -d '' file; do
   # Build a unique marker name from the file's relative path
   # e.g. acme-corp/2026-03-31-meeting.md → acme-corp_2026-03-31-meeting.md
-  relative="
-relative="${file#$VAULT_DIR/}"
+  relative="${file#$VAULT_DIR/}"
   marker="$TRACKER_DIR/${relative//"/"_}"
 
   # Skip if already posted
