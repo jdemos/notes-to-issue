@@ -1,6 +1,11 @@
 # notes-to-issue
 Local app that helps sync local account notes to the right github issue
 
+## Setup (WIP)
+- Get a list of your accounts so you can check for existing acocunt plans in github/sales and easily make the account folders (`mkdir account_name`) in a local directory
+- Point your Obsidian vault at the local directory (`$HOME/obsidian/sales`)
+- Create an Obsidian template (ie., `_templates/account_notes`) so you can easily capture the frontmatter and take notes from a standard template
+
 ## Overview
 
 Take plain-text meeting notes locally in Obsidian and automatically publish them as comments on the right GitHub issue in `github/sales`.
