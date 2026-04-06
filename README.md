@@ -2,7 +2,7 @@
 Local app that helps sync local account notes to the right github issue
 
 ## Setup (WIP)
-- Get a list of your accounts so you can check for existing acocunt plans in github/sales and easily make the account folders (`mkdir account_name`) in a local directory
+- Get a list of your accounts so you can check for existing account plans in github/sales and easily make the account folders (`mkdir account_name`) in a local directory
 - Point your Obsidian vault at the local directory (`$HOME/obsidian/sales`)
 - Create an Obsidian template (ie., `_templates/account_notes`) so you can easily capture the frontmatter and take notes from a standard template
 
@@ -52,3 +52,26 @@ github_issue: 456
 
 - [GitHub CLI](https://cli.github.com/) installed and authenticated (`gh auth login`)
 - Obsidian with the Templates core plugin (optional, but recommended for pre-filling frontmatter)
+
+## Usage
+
+```bash
+# Normal run – posts any unpublished notes
+./publish-notes.sh
+
+# Dry run – shows what would be posted without making any API calls
+./publish-notes.sh --dry-run
+```
+
+### Environment overrides
+
+The script can be pointed at a different vault or repo without editing it:
+
+```bash
+VAULT_DIR=~/notes/work REPO=myorg/myrepo ./publish-notes.sh
+```
+
+| Variable   | Default               | Description                              |
+|------------|-----------------------|------------------------------------------|
+| `VAULT_DIR`| `~/obsidian/sales`    | Path to your local Obsidian vault folder |
+| `REPO`     | `github/sales`        | GitHub repo to post comments in          |
