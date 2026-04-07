@@ -7,6 +7,9 @@
 
 set -euo pipefail
 
+# Ensure Homebrew and common tool paths are available (needed when run via cron)
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
 VAULT_DIR="$HOME/obsidian/sales"
 REPO="github/sales"
 
@@ -42,4 +45,4 @@ while IFS= read -r -d '' file; do
   sed -i '' 's/^published: false/published: true/' "$file"
   echo "✅ Posted and marked."
 
-done < <(find "$VAULT_DIR" -name "*.md" -not -name "_*.md" -print0)
+done < <(find "$VAULT_DIR" -name "*.md" -not -name "_*.md" -not -path "*/_*/*" -print0)
