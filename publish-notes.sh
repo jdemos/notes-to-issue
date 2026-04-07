@@ -42,7 +42,7 @@ while IFS= read -r -d '' file; do
   echo "$body" | gh issue comment "$issue_number" --repo "$REPO" --body-file -
 
   # Mark as posted only if the gh command succeeded
-  sed -i '' 's/^published: false/published: true/' "$file"
+  sed -i '' 's/^published: "false"/published: true/;s/^published: false/published: true/' "$file"
   echo "✅ Posted and marked."
 
 done < <(find "$VAULT_DIR" -name "*.md" -not -name "_*.md" -not -path "*/_*/*" -print0)
