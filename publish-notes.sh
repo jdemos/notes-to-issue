@@ -10,6 +10,10 @@ set -euo pipefail
 # Ensure Homebrew and common tool paths are available (needed when run via cron)
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
+echo "──────────────────────────────────────────"
+echo "▶ Run: $(date '+%A, %B %-d %Y at %-I:%M %p %Z')"
+echo "──────────────────────────────────────────"
+
 VAULT_DIR="$HOME/obsidian/sales"
 REPO="github/sales"
 
