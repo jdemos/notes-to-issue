@@ -65,5 +65,5 @@ A [Templater](https://github.com/SilverStripeUnderscore/obsidian-templater) temp
 ```
 GH_TOKEN=<your_token>
 TZ=America/Denver
-0 16 * * * /path/to/publish-notes.sh >> /tmp/publish-notes.log 2>&1
+30 16 * * 1-5 /path/to/publish-notes.sh >> /tmp/publish-notes.log 2>&1
 ```

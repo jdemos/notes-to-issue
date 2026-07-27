@@ -2,8 +2,8 @@
 # Scans Obsidian vault for unposted meeting notes and posts them as
 # GitHub issue comments on github/sales.
 #
-# Cron example – run every day at 5pm:
-#   0 17 * * * /path/to/publish-notes.sh >> /tmp/publish-notes.log 2>&1
+# Cron example – run Monday through Friday at 4:30pm:
+#   30 16 * * 1-5 /path/to/publish-notes.sh >> /tmp/publish-notes.log 2>&1
 
 set -euo pipefail
 
