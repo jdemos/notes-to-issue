@@ -1,6 +1,6 @@
 ---
 date: <% tp.date.now("YYYY-MM-DD") %>
-github_issue: <% tp.file.folder(true).split('-')[1].trim() %>
+github_issue: <% tp.file.folder().split('-')[1].trim() %>
 published: false
 ---
 ## Agenda: <% tp.date.now("MM-DD-YY") %>
